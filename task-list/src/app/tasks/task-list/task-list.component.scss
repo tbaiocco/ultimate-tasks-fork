@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  > .search {
+    width: 400px;
+    text-align: right;
+    > input {
+      width: 45%;
+    }
+  }
+  > .task {
+    width: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 2px 2px 5px 1px grey;
+    border-left: 4px solid grey;
+    padding: 0px 5px 5px 5px;
+    &.normal {
+      border-left-color: green;
+    }
+    &.high {
+      border-left-color: orangered;
+    }
+    > .header {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+    > .description {
+      margin-top: 3px;
+      border-top: 1px solid grey;
+    }
+  }
+}

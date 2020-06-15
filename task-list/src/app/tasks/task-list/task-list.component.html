@@ -1,0 +1,10 @@
+<div class="search">
+  <input type="text" placeholder="Search">
+</div>
+<div class="task" *ngFor="let task of tasks">
+  <div class="header">
+    <div class="title">{{task.title}}</div>
+    <div class="dueDate">{{task.dueDate | date}}</div>
+  </div>
+  <div class="description">{{task.description}}</div>
+</div>
