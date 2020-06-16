@@ -1,2 +1,10 @@
-<app-task-list></app-task-list>
+<nav title="Tasks">
+  <a [routerLink]="['/tasks']" routerLinkActive="active">Task List</a>
+  <a [routerLink]="['/create']" routerLinkActive="active">Create Task</a>
+</nav>
+{{ "HELLO" | translate: { name: "Teo", aka: "Teofilo" } }}
+{{ "Teo" | translate }}
+<button (click)="changeLanguage('pt')">PT</button>
+<button (click)="changeLanguage('ro')">RO</button>
+
 <router-outlet></router-outlet>

@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConfigService {
-
-  constructor() { }
+  constructor() {}
 
   public get api() {
     return environment.api;
   }
-
 }

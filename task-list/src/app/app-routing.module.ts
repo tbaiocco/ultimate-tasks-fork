@@ -1,10 +1,37 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardGuard } from './auth-guard.guard';
+import { TaskFormComponent } from './tasks/task-form/task-form.component';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'tasks',
+    component: TaskListComponent,
+    canActivate: [AuthGuardGuard],
+    children: [
+      {
+        path: ':taskId',
+        component: TaskListComponent,
+      },
+    ],
+  },
+  {
+    path: 'create',
+    component: TaskFormComponent,
+  },
+  {
+    path: 'task/:taskId',
+    component: TaskListComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'tasks',
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
