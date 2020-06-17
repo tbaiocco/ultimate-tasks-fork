@@ -1,7 +1,24 @@
-<nav title="Tasks">
+<!-- <nav title="Tasks">
   <a [routerLink]="['/tasks']" routerLinkActive="active">Task List</a>
   <a [routerLink]="['/create']" routerLinkActive="active">Create Task</a>
-</nav>
+</nav> -->
+
+<fd-shellbar>
+  <fd-shellbar-logo>
+    <a
+      href="#"
+      class="fd-shellbar__logo fd-shellbar__logo--image-replaced"
+      aria-label="SAP"
+    ></a>
+  </fd-shellbar-logo>
+  <fd-shellbar-title>
+    Ultimate tasks app
+  </fd-shellbar-title>
+  <fd-shellbar-actions>
+    
+  </fd-shellbar-actions>
+</fd-shellbar>
+
 {{ "HELLO" | translate: { name: "Teo", aka: "Teofilo" } }}
 {{ "Teo" | translate }}
 <button (click)="changeLanguage('pt')">PT</button>

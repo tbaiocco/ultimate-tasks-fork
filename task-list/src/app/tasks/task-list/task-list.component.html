@@ -6,12 +6,19 @@
     (keyup)="newSearchInput(inputField.value)"
   />
 </div>
-<div class="task" *ngFor="let task of tasks" [ngClass]="task.importance">
-  <div class="header">
-    <div class="title">{{ task.title }}</div>
-    <div class="dueDate">{{ task.dueDate | date }}</div>
+<ng-container *ngFor="let task of tasks">
+  <div
+    class="task"
+    [ngClass]="task.importance"
+    [routerLink]="['/task', task.id]"
+  >
+    <div class="header">
+      <div class="title">{{ task.title }}</div>
+      <div class="dueDate">{{ task.dueDate | date }}</div>
+    </div>
+    <div class="description">{{ task.description }}</div>
   </div>
-  <div class="description">{{ task.description }}</div>
-</div>
+  <button (click)="delete(task)">Delete</button>
+</ng-container>
 
 <button [routerLink]="['/create']">Add Task</button>

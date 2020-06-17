@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'task/:taskId',
-    component: TaskListComponent,
+    component: TaskFormComponent,
   },
   {
     path: '**',

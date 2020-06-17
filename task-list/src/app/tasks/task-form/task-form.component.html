@@ -1,1 +1,20 @@
-<p>task-form works!</p>
+<form [formGroup]="taskForm" (ngSubmit)="submit(taskForm.value)">
+  <input type="text" formControlName="title" />
+  <textarea formControlName="description"></textarea>
+  <input type="date" formControlName="dueDate" />
+  <select formControlName="importance">
+    <option value="low">Low</option>
+    <option value="normal">Normal</option>
+    <option value="high">High</option>
+  </select>
+  <input type="checkbox" formControlName="done" />
+
+  <div formArrayName="assignees">
+    <div *ngFor="let control of assignees.controls; let i = index">
+      <input type="text" [formControlName]="i" />
+    </div>
+    <button type="button" (click)="addAssignee()">Add person</button>
+  </div>
+
+  <input type="submit" value="Submit" [disabled]="taskForm.invalid" />
+</form>

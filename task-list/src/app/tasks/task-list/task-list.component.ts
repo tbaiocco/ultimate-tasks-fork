@@ -65,4 +65,8 @@ export class TaskListComponent implements OnInit {
   public newSearchInput(value: string) {
     this.searchInput$.next(value);
   }
+
+  public delete(task: Task) {
+    this.tasksService.deleteTask(task);
+  }
 }
